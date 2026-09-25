@@ -360,19 +360,15 @@
     data.pageUrl = window.location.href;
 
     try {
-      const res = await fetch(GAS_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(data),
-      });
-      const result = await res.json();
-      if (result.result === "success") {
-        statusEl.textContent = "送信が完了しました。ご応募ありがとうございます。";
-        statusEl.className = "success";
-        form.reset();
-      } else {
-        throw new Error(result.message || "送信に失敗しました");
+      try {
+        await postToGAS(data);
+      } catch (firstErr) {
+        // 通信が不安定な場合に備え、1回だけ自動で再送信してから失敗と判定する
+        await postToGAS(data);
       }
+      statusEl.textContent = "送信が完了しました。ご応募ありがとうございます。";
+      statusEl.className = "success";
+      form.reset();
     } catch (err) {
       statusEl.textContent = "送信に失敗しました。時間をおいて再度お試しください。";
       statusEl.className = "error";
@@ -381,6 +377,20 @@
       btn.textContent = "入力内容を確認";
     }
   });
+
+  // GASへの送信本体（成功しなければ例外を投げる）
+  async function postToGAS(payload) {
+    const res = await fetch(GAS_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+    });
+    const result = await res.json();
+    if (result.result !== "success") {
+      throw new Error(result.message || "送信に失敗しました");
+    }
+    return result;
+  }
 </script>
 
 </body>
