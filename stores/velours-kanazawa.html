@@ -4,6 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/images/favicon.png">
+
+<!-- Google tag (gtag.js) : ドメインで本番/テストを自動判定 -->
+<script>
+(function(){
+  var GA_ID = location.hostname.includes("form.insou-job.com")
+    ? "G-SC21VS71MC"   // 本番
+    : "G-9M3KQZSL1B";  // テスト（ローカルfile://で開いた時もこちら）
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag("js", new Date());
+  gtag("config", GA_ID);
+})();
+</script>
 <title>ベロア金沢 求人｜体験時給8,000円〜 完全新規オープン</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
