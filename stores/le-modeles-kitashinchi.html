@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/images/favicon.png">
 
-<!-- テストサイトは検索エンジンにインデックスさせない（本番は許可） -->
 <script>
   if (!location.hostname.includes("form.insou-job.com")) {
     var m = document.createElement("meta");
@@ -15,12 +14,11 @@
   }
 </script>
 
-<!-- Google tag (gtag.js) : ドメインで本番/テストを自動判定 -->
 <script>
 (function(){
   var GA_ID = location.hostname.includes("form.insou-job.com")
-    ? "G-SC21VS71MC"   // 本番
-    : "G-9M3KQZSL1B";  // テスト（ローカルfile://で開いた時もこちら）
+    ? "G-SC21VS71MC"
+    : "G-9M3KQZSL1B";
   var s = document.createElement("script");
   s.async = true;
   s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
@@ -38,7 +36,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* BARCELONA系：写真を邪魔しない、やわらかいニュートラルカラー */
     --deep:#3d3522;
     --deep2:#52462c;
     --accent:#8d8259;
@@ -67,7 +64,6 @@
     padding-bottom:64px;
   }
 
-  /* 見出しは参考サイト寄りの上品な明朝 */
   h1,h2,h3{
     font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
     font-weight:500;
@@ -89,7 +85,6 @@
     display:block;
   }
 
-  /* 全体の日本語をBARCELONA系の上品な明朝トーンに統一 */
   body,
   input,
   select,
@@ -345,7 +340,6 @@
     object-fit:cover;
     border-radius:2px;
 
-    /* 写真を少しだけ参考サイト寄りの柔らかいトーンに */
     filter:saturate(.88) contrast(.97) brightness(1.02);
   }
 
@@ -762,7 +756,7 @@
 <div class="hero">
   <div class="wrap">
     <div class="logo-card">
-      <img src="https://test.insou-job.com/images/le-modeles-kitashinchi-logo-white.png" alt="logo">
+      <img src="/images/le-modeles-kitashinchi-logo-white.png" alt="logo">
     </div>
     <span class="badge">大阪 / 北新地 ・ 会員制ラウンジ</span>
     <p class="catch">2026年10月NEW OPEN★北新地に会員制ラウンジ誕生</p>
@@ -971,7 +965,7 @@
 
 <footer>
   <div class="footer-logo-card">
-    <img src="https://test.insou-job.com/images/le-modeles-kitashinchi-logo-black.png" alt="logo">
+    <img src="/images/le-modeles-kitashinchi-logo-black.png" alt="logo">
   </div>
 
   <a class="jobchalle-footer-link" href="https://www.fankura.com/jobchalle/" target="_blank" rel="noopener noreferrer">
@@ -985,11 +979,9 @@
 </footer>
 
 <script>
-  // ▼▼ 環境ごとに変更する設定値 ▼▼
-  // テスト・本番でファイルを分ける必要がないよう、アクセス中のドメインで自動判定します
   const GAS_ENDPOINT = location.hostname.includes("form.insou-job.com")
-    ? "https://script.google.com/macros/s/AKfycbxGTmCUnV-m3QXoiVQl2EGiz6Cl9kYyHHAUkXlLh2602s1xx2TMteXZR8HzmtFpdTL6/exec" // 本番
-    : "https://script.google.com/macros/s/AKfycbwhPlASGST33wQB02Dpou9QiZayyLy3LQJqdKwVaaJv4NOLXMJHVj7s9Vu_PCPAAdY/exec"; // テスト（ローカルファイルでの確認時もこちら）
+    ? "https://script.google.com/macros/s/AKfycbxGTmCUnV-m3QXoiVQl2EGiz6Cl9kYyHHAUkXlLh2602s1xx2TMteXZR8HzmtFpdTL6/exec" 
+    : "https://script.google.com/macros/s/AKfycbwhPlASGST33wQB02Dpou9QiZayyLy3LQJqdKwVaaJv4NOLXMJHVj7s9Vu_PCPAAdY/exec"; 
   const STORE_NAME = "ル・モデルス";
   const FORM_TYPE = "店舗LP";
 
@@ -1001,7 +993,6 @@
   const JOB_TYPES = ["キャスト応募", "スタッフ応募", "社員応募", "ドライバー応募"];
 
   const REQUIRED_FIELDS = ["jobType", "name", "age", "email"]; // ★のついた必須項目と合わせて変更してください
-  // ▲▲ ここまで ▲▲
 
   // 職種セレクトボックスを動的に生成
   const jobTypeSelect = document.getElementById("jobType");
