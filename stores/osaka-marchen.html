@@ -614,6 +614,10 @@
     data.requiredFields = REQUIRED_FIELDS.join(",");
     data.submittedAt = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
     data.pageUrl = window.location.href;
+    // 二重送信防止用の送信ID（自動リトライ時も同じIDを送り、GAS側で重複を弾く）
+    data.submissionId = (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
 
     try {
       try {
