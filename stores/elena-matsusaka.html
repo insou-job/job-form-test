@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://img.fankura.com/img/w1000h676/Zd/my/Zdmy8fVRtvPT_5_533335.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     /* 配色（新デザイン準拠） */
@@ -59,14 +59,15 @@
     --line-green:#06C755;
     /* ヒーロー（現行LP準拠） */
     --deep:#3d2229;
-    /* フォント（現行LP準拠） */
-    --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;
+    /* フォント（ル・モデルス北新地と同じ組み合わせ：本文ゴシック＋見出し明朝＋英字Cormorant） */
+    --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+    --mincho:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
     --en:"Cormorant Garamond","Times New Roman",serif;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:var(--bg-outer);}
   body{
-    font-family:var(--serif);
+    font-family:var(--sans);
     color:var(--ink);
     -webkit-font-smoothing:antialiased;
   }
@@ -304,6 +305,17 @@
   .sticky .s-line{background:var(--line-green);color:#fff;}
   .sticky .s-web{background:var(--accent);color:#fff;}
   .sticky .s-tel{border:1px solid var(--accent);color:var(--accent);font-size:13px;}
+
+  /* 見出し・大きな数字・キャッチは明朝（Shippori Mincho）。本文・ボタン・フォームはゴシック */
+  .hero h1,
+  .ttl,
+  .worry-answer p,
+  .sim-result .v,
+  .mid-cta .q,
+  .message .hl,
+  .thanks .t{
+    font-family:var(--mincho);
+  }
 
   @media (max-width:360px){
     .hero h1{font-size:26px;}
