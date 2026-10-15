@@ -103,10 +103,10 @@
   /* ---------- 01 HERO（画像・フォントは現行LP） ---------- */
   .hero{
     position:relative;color:#fff;text-align:center;
-    padding:40px 22px 92px;
+    padding:40px 22px 44px;
     background:
-      /* 下端だけ次のセクション色（淡ピンク）へ溶け込ませる。白文字・ボタンにかからない範囲に限定 */
-      linear-gradient(180deg,rgba(248,233,231,0) calc(100% - 96px),rgba(248,233,231,.55) calc(100% - 44px),#f8e9e7 100%),
+      /* 下に向かって白くなるグラデーション（3バッジに少しかかる位置から始まり、ボタン以下は白地） */
+      linear-gradient(180deg,rgba(251,246,244,0) calc(100% - 300px),rgba(251,246,244,.55) calc(100% - 215px),rgba(251,246,244,.88) calc(100% - 140px),#f8e9e7 100%),
       linear-gradient(rgba(61,34,41,.42),rgba(61,34,41,.62)),
       url("https://img.fankura.com/img/w1000h676/Zd/my/Zdmy8fVRtvPT_5_533335.jpg") center/cover no-repeat;
     background-color:var(--deep);
@@ -128,14 +128,15 @@
   .hero-note{margin:0 0 20px;font-size:11.5px;color:#eee6e5;}
   .hero-badges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 20px;}
   .hero-badges div{
+    border:1px solid rgba(179,97,122,.45);
     background:rgba(255,255,255,.92);color:var(--ink2);border-radius:10px;
     padding:10px 4px;font-size:11.5px;line-height:1.45;
   }
   .hero-badges b{display:block;font-size:15px;color:var(--accent);font-weight:700;}
   .hero-ctas{display:flex;flex-direction:column;gap:10px;}
-  .btn-web-hero{min-height:50px;border:1px solid rgba(255,255,255,.85);color:#fff;font-size:15px;background:rgba(61,34,41,.25);}
-  .btn-web-hero:hover{color:#fff;background:rgba(61,34,41,.45);}
-  .hero-foot{margin:12px 0 0;font-size:12px;color:#f0d8dc;}
+  .btn-web-hero{min-height:50px;border:1px solid var(--accent);color:var(--accent);font-size:15px;background:rgba(255,255,255,.55);}
+  .btn-web-hero:hover{color:var(--accent-dark);background:rgba(255,255,255,.85);}
+  .hero-foot{margin:12px 0 0;font-size:12px;color:var(--sub);}
   .hero + section{padding-top:28px;} /* ヒーロー下端のグラデーションとつなげるため余白を詰める */
 
   /* ---------- 02 お悩み ---------- */
