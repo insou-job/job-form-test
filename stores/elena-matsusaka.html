@@ -103,8 +103,10 @@
   /* ---------- 01 HERO（画像・フォントは現行LP） ---------- */
   .hero{
     position:relative;color:#fff;text-align:center;
-    padding:40px 22px 36px;
+    padding:40px 22px 92px;
     background:
+      /* 下端だけ次のセクション色（淡ピンク）へ溶け込ませる。白文字・ボタンにかからない範囲に限定 */
+      linear-gradient(180deg,rgba(248,233,231,0) calc(100% - 96px),rgba(248,233,231,.55) calc(100% - 44px),#f8e9e7 100%),
       linear-gradient(rgba(61,34,41,.42),rgba(61,34,41,.62)),
       url("https://img.fankura.com/img/w1000h676/Zd/my/Zdmy8fVRtvPT_5_533335.jpg") center/cover no-repeat;
     background-color:var(--deep);
@@ -134,6 +136,7 @@
   .btn-web-hero{min-height:50px;border:1px solid rgba(255,255,255,.85);color:#fff;font-size:15px;background:rgba(61,34,41,.25);}
   .btn-web-hero:hover{color:#fff;background:rgba(61,34,41,.45);}
   .hero-foot{margin:12px 0 0;font-size:12px;color:#f0d8dc;}
+  .hero + section{padding-top:28px;} /* ヒーロー下端のグラデーションとつなげるため余白を詰める */
 
   /* ---------- 02 お悩み ---------- */
   .worry-list{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none;}
