@@ -661,10 +661,17 @@ a:hover{color:#c23a72;}
 
   // 職種セレクトボックスを動的に生成
   const jobTypeSelect = document.getElementById("jobType");
+  // 画面に表示する名前（スプレッドシートには左側の全店共通の値で記録される）
+  const JOB_LABELS = {
+    "キャスト応募": "アイドル候補生",
+    "スタッフ応募": "スタッフ",
+    "社員応募": "社員",
+    "ドライバー応募": "ドライバー",
+  };
   JOB_TYPES.forEach((label) => {
     const opt = document.createElement("option");
     opt.value = label;
-    opt.textContent = label;
+    opt.textContent = JOB_LABELS[label] || label;
     jobTypeSelect.appendChild(opt);
   });
 
