@@ -335,7 +335,7 @@
     "value": "elena-matsusaka"
   },
   "datePosted": "2026-09-30",
-  "validThrough": "2027-01-13T23:59:59+09:00",
+  "validThrough": "2027-01-19T23:59:59+09:00",
   "employmentType": "OTHER",
   "hiringOrganization": {
     "@type": "Organization",
@@ -377,7 +377,7 @@
     "value": "elena-matsusaka-staff"
   },
   "datePosted": "2026-10-15",
-  "validThrough": "2027-01-13T23:59:59+09:00",
+  "validThrough": "2027-01-19T23:59:59+09:00",
   "employmentType": "OTHER",
   "hiringOrganization": {
     "@type": "Organization",
@@ -791,5 +791,28 @@
   }
 </script>
 
+<script>
+  /* ===== アナリティクス：WEB応募ボタン（応募フォームへ移動するボタン）のクリック計測・全LP共通 ===== */
+  (function(){
+    function storeName(){
+      try { if (typeof STORE_NAME !== "undefined") return STORE_NAME; } catch (e) {}
+      return document.title.split(/[ ｜|]/)[0];
+    }
+    function position(a){
+      if (a.dataset.cta) return a.dataset.cta;
+      for (var el = a; el && el !== document.body; el = el.parentElement) {
+        if (window.getComputedStyle(el).position === "fixed") return "sticky";
+        if (el.id === "entry") return "entry";
+        if (el.matches(".hero, header, [data-screen-label^='01']")) return "hero";
+      }
+      return "other";
+    }
+    document.addEventListener("click", function(e){
+      var a = e.target.closest('a[href="#entry"], a[href="#web-form"]');
+      if (!a || typeof window.gtag !== "function") return;
+      window.gtag("event", "web_apply_click", { store: storeName(), cta_position: position(a) });
+    });
+  })();
+</script>
 </body>
 </html>
