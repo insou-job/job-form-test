@@ -1105,6 +1105,8 @@
       }
       statusEl.textContent = "送信が完了しました。ご応募ありがとうございます。";
       statusEl.className = "success";
+      // アナリティクス：応募完了（コンバージョン）
+      if (typeof window.gtag === "function") window.gtag("event", "generate_lead", { store: STORE_NAME, job_type: data.jobType || "", form_type: FORM_TYPE });
       form.reset();
     } catch (err) {
       statusEl.textContent = "送信に失敗しました。お電話・LINEでもご応募いただけます。";
