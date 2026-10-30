@@ -212,6 +212,60 @@
   .s-line{background:var(--line-green);color:#fff;}
   .s-web{background:var(--pink);color:#fff;}
   .s-tel{background:#fff;color:var(--plum);border:1.5px solid var(--plum);}
+
+  /* =========================================================
+     レスポンシブ（タブレット・PC）
+     スマホ（〜767px）は上のスタイルのまま。広い画面では
+     各セクションの中身を最大880pxで中央にそろえ、段組みにする。
+     ========================================================= */
+  @media (min-width:768px){
+    body{background:var(--bg);}
+    .wrap{max-width:none;padding-bottom:0;}
+    .hero,.section,footer{padding-left:max(32px, calc((100% - 880px) / 2));padding-right:max(32px, calc((100% - 880px) / 2));}
+    .section{padding-top:64px;padding-bottom:64px;}
+    .h2 b{font-size:25px;}
+
+    /* ヒーロー：左にイラスト、右にキャッチと応募ボタン */
+    .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:36px;align-items:center;padding-top:48px;padding-bottom:56px;}
+    .hero > *{grid-column:2;}
+    .hero .illust{grid-column:1;grid-row:1 / span 7;margin-bottom:0;}
+    .hero-logo{width:200px;}
+    .catch{margin:0 0 4px;}
+    .catch h1{font-size:27px;}
+    .badges{margin:14px 0 16px;}
+
+    /* 比較表と説明文を横並び */
+    .about-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;align-items:stretch;}
+    .about-grid .compare{margin-bottom:0;}
+    .lead-box{font-size:14.5px;padding:22px;align-self:center;}
+
+    .points{grid-template-columns:repeat(4,1fr);gap:14px;}
+    .pt{padding:20px 12px 18px;}
+
+    /* お給料：時給カードとシミュレーターを横並び */
+    .wage-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:16px;align-items:stretch;}
+    .wage-card{margin-bottom:0;display:flex;flex-direction:column;justify-content:center;}
+
+    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+    .step{flex-direction:column;align-items:center;text-align:center;padding:20px 14px;}
+
+    .tabs,.req-table,.faq{max-width:720px;margin-left:auto;margin-right:auto;}
+    .tabs{margin-bottom:14px;}
+    .faq{margin-bottom:10px;}
+    .shop{max-width:560px;margin:0 auto;}
+
+    /* 応募：左にLINE・電話、右にフォーム */
+    .entry-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px;align-items:start;}
+    .entry-grid .btn-stack{position:sticky;top:24px;}
+    .form-card,.thanks{margin-top:0;}
+    .entry .lead{margin-bottom:24px;}
+
+    .sticky{display:none;}
+  }
+  @media (min-width:1100px){
+    .hero{column-gap:48px;}
+    .catch h1{font-size:30px;}
+  }
 </style>
 
 <script type="application/ld+json">
@@ -308,7 +362,7 @@
     <img class="hero-logo" src="/images/macherie-kobe-logo.png" alt="Ma Chérie Lounge cafe">
     <p class="hero-sub">ラウンジカフェ マシェリ・神戸三宮に誕生</p>
     <div class="open"><b>GRAND OPEN</b><span>2026.11</span></div>
-    <div class="illust"><img src="/images/macherie-kobe-illust.jpg" alt="カフェの窓辺でくつろぐ女性のイラスト" width="977" height="681"></div>
+    <div class="illust"><img src="/images/macherie-kobe-illust.jpg" alt="カフェの窓辺でくつろぐ女性のイラスト" width="977" height="642"></div>
     <div class="catch">
       <h1>私服のまま、<br><em>ふらっと</em>働けるお店。</h1>
       <p>キャバクラじゃない、ラウンジカフェ。<br>ノルマも罰金もアフターもありません。</p>
@@ -327,6 +381,7 @@
   <!-- Not cabaret -->
   <section class="section white">
     <div class="h2"><small>ABOUT</small><b>ラウンジカフェって<br>どんなお店？</b></div>
+    <div class="about-grid">
     <div class="compare">
       <div class="cmp no">
         <p class="t">よくあるイメージ</p>
@@ -339,6 +394,7 @@
     </div>
     <div class="lead-box">
       マシェリは、キャバクラでもスナックでもない<b>「ラウンジカフェ」</b>。お仕事は<b>居酒屋のホールに近い感覚</b>なので、夜のお仕事がはじめての方や、学生さん・OLさんも安心してスタートできます。大阪ミナミのお店に続く、神戸の新しいお店です。
+    </div>
     </div>
   </section>
 
@@ -361,6 +417,7 @@
   <!-- Wage -->
   <section class="section white">
     <div class="h2"><small>SALARY</small><b>お給料</b></div>
+    <div class="wage-grid">
     <div class="wage-card">
       <p class="lbl">ガール</p>
       <p class="big">時給 <span class="en">2,500〜3,000</span> 円</p>
@@ -374,6 +431,7 @@
         <div><small>1日あたり</small><b class="en" id="v-daily">10,000</b>円</div>
         <div><small>1か月（4週）</small><b class="en" id="v-monthly">80,000</b>円</div>
       </div>
+    </div>
     </div>
     <p class="fine">※シミュレーションは時給×勤務時間で計算した目安で、金額を保証するものではありません。実際の時給は面接時に決まります。掲載内容は2026年10月時点の情報です。</p>
   </section>
@@ -435,6 +493,7 @@
   <section class="section entry" id="entry">
     <div class="h2"><small>ENTRY</small><b>オープニングメンバー募集中</b></div>
     <p class="lead">LINE・電話・WEBフォームのどれでもOK。<br>担当から折り返しご連絡します。</p>
+    <div class="entry-grid">
     <div class="btn-stack">
       <a class="btn btn-line" href="https://line.me/R/ti/p/%40722klevt" target="_blank" rel="noopener noreferrer" data-cta="entry">LINEで応募する（いちばん簡単）</a>
       <a class="btn btn-tel" href="tel:0120515295" data-cta="entry">電話で応募 0120-515-295<small>月〜金 10:00〜21:00／土 13:00〜18:00</small></a>
@@ -481,6 +540,7 @@
     <div class="thanks" id="thanks" hidden>
       <p class="t">ご応募ありがとうございます</p>
       <p>担当者より折り返しご連絡いたします。</p>
+    </div>
     </div>
   </section>
 
