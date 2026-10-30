@@ -230,14 +230,25 @@
     .section{padding-top:64px;padding-bottom:64px;}
     .h2 b{font-size:25px;}
 
-    /* ヒーロー：左にイラスト、右にキャッチと応募ボタン */
-    .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:36px;align-items:center;padding-top:48px;padding-bottom:56px;}
-    .hero > *{grid-column:2;}
-    .hero .illust{grid-column:1;grid-row:1 / span 7;margin-bottom:0;}
-    .hero-logo{width:200px;}
-    .catch{margin:0 0 4px;}
-    .catch h1{font-size:27px;}
-    .badges{margin:14px 0 16px;}
+    /* ヒーロー：1列・中央ぞろえで大きく見せる */
+    .hero{padding-top:56px;padding-bottom:64px;}
+    .hero-logo{width:300px;margin-bottom:16px;}
+    .hero-sub{font-size:18px;margin-bottom:6px;}
+    .open{gap:14px;margin-bottom:28px;}
+    .open b{font-size:46px;letter-spacing:.06em;}
+    .open span{font-size:24px;}
+    .illust{max-width:880px;margin:0 auto -56px;border-radius:24px;}
+    .catch{max-width:640px;margin:0 auto;padding:28px 24px 24px;border-radius:22px;}
+    .catch h1{font-size:36px;}
+    .catch h1 br{display:none;}
+    .catch p{font-size:15px;}
+    .badges{max-width:640px;margin:26px auto 22px;gap:14px;}
+    .badge{padding:16px 6px 14px;}
+    .badge small{font-size:12px;}
+    .badge b{font-size:18px;}
+    .badge b .en{font-size:22px;}
+    .hero .btn-stack{flex-direction:row;max-width:640px;margin:0 auto;}
+    .hero .btn{flex:1;min-height:64px;font-size:17px;}
 
     /* 比較表と説明文を横並び */
     .about-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;align-items:stretch;}
@@ -271,8 +282,8 @@
     .cta-band .btn{flex:1;}
   }
   @media (min-width:1100px){
-    .hero{column-gap:48px;}
-    .catch h1{font-size:30px;}
+    .catch{max-width:720px;}
+    .catch h1{font-size:40px;white-space:nowrap;}
   }
 </style>
 
