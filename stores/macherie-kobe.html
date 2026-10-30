@@ -76,11 +76,14 @@
   .catch h1{font-size:23px;line-height:1.5;font-weight:900;margin-bottom:6px;}
   .catch h1 em{font-style:normal;color:var(--pink-deep);background:linear-gradient(transparent 62%, var(--pink-soft) 62%);}
   .catch p{font-size:12.5px;color:var(--plum-sub);}
+  .catch .no-contact{color:var(--pink-deep);font-weight:900;font-size:13.5px;}
   .badges{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0;}
   .badge{background:var(--card);border:1.5px solid var(--pink-soft);border-radius:999px 999px 16px 16px;padding:12px 4px 10px;}
   .badge small{display:block;font-size:10.5px;color:var(--plum-sub);line-height:1.4;}
   .badge b{display:block;font-size:14px;line-height:1.4;color:var(--pink-deep);}
   .badge b .en{font-size:16px;}
+  .badge-wage b{white-space:nowrap;font-size:12px;letter-spacing:-.02em;}
+  .badge-wage b .en{font-size:14.5px;letter-spacing:0;}
 
   /* ---------- buttons ---------- */
   .btn{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:56px;padding:12px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15.5px;text-align:center;line-height:1.35;}
@@ -247,6 +250,8 @@
     .badge small{font-size:12px;}
     .badge b{font-size:18px;}
     .badge b .en{font-size:22px;}
+    .badge-wage b{font-size:16px;}
+    .badge-wage b .en{font-size:21px;}
     .hero .btn-stack{flex-direction:row;max-width:640px;margin:0 auto;}
     .hero .btn{flex:1;min-height:64px;font-size:17px;}
 
@@ -292,7 +297,7 @@
   "@context": "https://schema.org/",
   "@type": "JobPosting",
   "title": "ガール（ラウンジカフェ）",
-  "description": "神戸三宮に2026年11月オープンのラウンジカフェ「マシェリ神戸」（地下鉄 三宮駅 徒歩約1分／阪急 神戸三宮駅 徒歩約2分／JR 三ノ宮駅 徒歩約4分）。キャバクラでもスナックでもないラウンジカフェで、お仕事は居酒屋のホールに近い感覚です。未経験・学生・OL歓迎、お酒が飲めなくてもOK。 【給与】時給2,500円〜3,000円 【勤務時間】18:00〜翌1:00（1日3時間〜／フリーシフト制／終電あがりOK） 【応募資格】18歳以上 【待遇】私服勤務OK（デニム・スニーカー・パーカーなど）／ノルマ・アフター・罰金なし／更衣室あり・手ぶら出勤OK／終電後の送りあり／1日体験入店は全額日払い／法人経営",
+  "description": "神戸三宮に2026年11月オープンのラウンジカフェ「マシェリ神戸」（地下鉄 三宮駅 徒歩約1分／阪急 神戸三宮駅 徒歩約2分／JR 三ノ宮駅 徒歩約4分）。カフェ以上ラウンジ未満の新業態「ラウンジカフェ」で、お仕事はお客様とお話したりカラオケしたり、飲み会感覚で楽しい時間を過ごしてもらえればOK。夜のお仕事がはじめての未経験の方を優先して採用中。学生・OL歓迎、お酒が飲めなくてもOK。 【給与】時給2,500円〜3,000円 【勤務時間】18:00〜翌1:00（1日3時間〜／フリーシフト制／終電あがりOK） 【応募資格】18歳以上 【待遇】私服勤務OK（デニム・スニーカー・パーカーなど）／連絡先交換・客呼び一切なし／ノルマ・アフター・罰金なし／更衣室あり・手ぶら出勤OK／終電後の送りあり／1日体験入店は全額日払い／法人経営",
   "identifier": {
     "@type": "PropertyValue",
     "name": "ラウンジカフェ マシェリ神戸",
@@ -384,10 +389,10 @@
     <div class="illust"><img src="/images/macherie-kobe-illust.jpg" alt="カフェの窓辺でくつろぐ女性のイラスト" width="977" height="642"></div>
     <div class="catch">
       <h1>私服のまま、<br><em>ふらっと</em>働けるお店。</h1>
-      <p>キャバクラじゃない、ラウンジカフェ。<br>ノルマも罰金もアフターもありません。</p>
+      <p>キャバクラじゃない、ラウンジカフェ。<br><strong class="no-contact">連絡先交換・客呼び一切なし！</strong><br>ノルマも罰金もアフターもありません。</p>
     </div>
     <div class="badges">
-      <div class="badge"><small>時給</small><b><span class="en">2,500</span>円〜</b></div>
+      <div class="badge badge-wage"><small>時給</small><b><span class="en">2,500</span>〜<span class="en">3,000</span>円</b></div>
       <div class="badge"><small>服装</small><b>私服OK</b></div>
       <div class="badge"><small>ノルマ・罰金</small><b>なし</b></div>
     </div>
@@ -412,7 +417,9 @@
       </div>
     </div>
     <div class="lead-box">
-      マシェリは、キャバクラでもスナックでもない<b>「ラウンジカフェ」</b>。お仕事は<b>居酒屋のホールに近い感覚</b>なので、夜のお仕事がはじめての方や、学生さん・OLさんも安心してスタートできます。大阪ミナミのお店に続く、神戸の新しいお店です。
+      マシェリは、カフェ以上ラウンジ未満、新業態<b>「ラウンジカフェ」</b>♪<br>
+      お仕事は、お客様とお話したりカラオケしたり、<b>飲み会感覚で楽しい時間を過ごしてもらえればOK！</b>なので<b>夜のお仕事がはじめての未経験の方を優先して採用中！</b><br>
+      あなたのペースで無理せず働いていただけます◎
     </div>
     </div>
   </section>
@@ -510,7 +517,7 @@
   <!-- FAQ -->
   <section class="section">
     <div class="h2"><small>FAQ</small><b>よくある質問</b></div>
-    <details class="faq"><summary>キャバクラとは何が違うの？</summary><p>マシェリはキャバクラでもスナックでもない「ラウンジカフェ」です。私服のまま働けて、ノルマ・罰金・アフターはありません。お仕事は居酒屋のホールに近い感覚です。</p></details>
+    <details class="faq"><summary>キャバクラとは何が違うの？</summary><p>マシェリはキャバクラでもスナックでもない「ラウンジカフェ」です。私服のまま働けて、連絡先交換・客呼びは一切なし。ノルマ・罰金・アフターもありません。お客様とお話したりカラオケしたり、飲み会感覚で楽しい時間を過ごしてもらえればOKです。</p></details>
     <details class="faq"><summary>本当に私服でいいの？</summary><p>はい。デニムやスニーカー、パーカーでも大丈夫です。更衣室もあるので手ぶらで来られます。</p></details>
     <details class="faq"><summary>お酒が飲めなくても働ける？</summary><p>飲めなくても大丈夫です。無理に飲むことはありません。</p></details>
     <details class="faq"><summary>週1日・短時間でもいい？</summary><p>1日3時間から、フリーシフトで働けます。学生さんやWワークの方も歓迎です。</p></details>
