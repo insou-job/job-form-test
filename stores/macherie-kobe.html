@@ -199,6 +199,11 @@
   .thanks .t{font-size:19px;font-weight:900;color:var(--pink-deep);margin-bottom:6px;}
   .thanks p{font-size:13.5px;color:var(--plum-sub);}
 
+  /* 途中の応募ボタン */
+  .cta-band{padding:30px 20px;background:linear-gradient(180deg,#fde3e7 0%, var(--bg) 100%);text-align:center;}
+  .cta-msg{font-size:14px;font-weight:700;color:var(--pink-deep);margin-bottom:12px;}
+  .cta-msg::before,.cta-msg::after{content:"♡";font-size:11px;margin:0 8px;vertical-align:2px;color:var(--pink);}
+
   /* footer */
   footer{padding:30px 20px;text-align:center;font-size:12px;color:var(--plum-sub);display:flex;flex-direction:column;align-items:center;gap:10px;}
   .footer-logo{width:120px;}
@@ -261,6 +266,9 @@
     .entry .lead{margin-bottom:24px;}
 
     .sticky{display:none;}
+    .cta-band{padding:36px max(32px, calc((100% - 880px) / 2));}
+    .cta-band .btn-stack{flex-direction:row;max-width:640px;margin:0 auto;}
+    .cta-band .btn{flex:1;}
   }
   @media (min-width:1100px){
     .hero{column-gap:48px;}
@@ -414,6 +422,16 @@
     <div class="outfit"><span>デニム</span><span>スニーカー</span><span>パーカー</span><span>いつもの私服</span></div>
   </section>
 
+
+  <!-- 途中の応募ボタン -->
+  <div class="cta-band">
+    <p class="cta-msg">私服のまま、気軽に始められます</p>
+    <div class="btn-stack">
+      <a class="btn btn-web" href="#entry" data-cta="middle">WEBで応募する<small>1分で完了・オープニングメンバー募集中</small></a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40722klevt" target="_blank" rel="noopener noreferrer" data-cta="middle">LINEで気軽に相談する</a>
+    </div>
+  </div>
+
   <!-- Wage -->
   <section class="section white">
     <div class="h2"><small>SALARY</small><b>お給料</b></div>
@@ -435,6 +453,16 @@
     </div>
     <p class="fine">※シミュレーションは時給×勤務時間で計算した目安で、金額を保証するものではありません。実際の時給は面接時に決まります。掲載内容は2026年10月時点の情報です。</p>
   </section>
+
+
+  <!-- 途中の応募ボタン -->
+  <div class="cta-band">
+    <p class="cta-msg">まずは1日体験から。お給料は全額日払いです</p>
+    <div class="btn-stack">
+      <a class="btn btn-web" href="#entry" data-cta="middle">WEBで応募する<small>1分で完了・オープニングメンバー募集中</small></a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40722klevt" target="_blank" rel="noopener noreferrer" data-cta="middle">LINEで気軽に相談する</a>
+    </div>
+  </div>
 
   <!-- Flow -->
   <section class="section">
@@ -477,6 +505,16 @@
     <details class="faq"><summary>週1日・短時間でもいい？</summary><p>1日3時間から、フリーシフトで働けます。学生さんやWワークの方も歓迎です。</p></details>
     <details class="faq"><summary>帰りが遅くなっても大丈夫？</summary><p>終電であがることもできますし、終電後まで働く日は送りがあります。</p></details>
   </section>
+
+
+  <!-- 途中の応募ボタン -->
+  <div class="cta-band">
+    <p class="cta-msg">質問だけでも大丈夫。お気軽にどうぞ</p>
+    <div class="btn-stack">
+      <a class="btn btn-web" href="#entry" data-cta="middle">WEBで応募する<small>1分で完了・オープニングメンバー募集中</small></a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40722klevt" target="_blank" rel="noopener noreferrer" data-cta="middle">LINEで気軽に相談する</a>
+    </div>
+  </div>
 
   <!-- Shop -->
   <section class="section white">
