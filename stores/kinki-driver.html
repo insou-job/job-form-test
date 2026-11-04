@@ -108,11 +108,14 @@
   .areas{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .area{background:var(--night-3);border:1px solid var(--line-dark);border-top:3px solid var(--amber);border-radius:8px;padding:12px 14px;}
   .area-wide{grid-column:1 / -1;}
+  .area-head{margin-bottom:4px;}
+  .area-head b{margin-bottom:0;}
+  .area-wage{display:inline-block;font-size:11.5px;font-weight:700;color:var(--night);background:var(--amber);border-radius:3px;padding:0 8px;margin-top:3px;}
   .area b{display:block;font-size:15.5px;margin-bottom:2px;}
   .area p{font-size:12px;color:#c9cfdc;}
   .area-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
-  .area-chips span{font-size:12.5px;font-weight:700;color:var(--night);background:var(--amber);border-radius:3px;padding:1px 9px;}
-  .area-chips span.etc{background:transparent;color:#c9cfdc;font-weight:500;padding:1px 2px;}
+  .area-chips span{font-size:12.5px;font-weight:700;color:#fff;border:1px solid rgba(244,183,64,.7);border-radius:3px;padding:0 9px;}
+  .area-chips span.etc{border:none;color:#c9cfdc;font-weight:500;padding:0 2px;}
   .areas-note{font-size:11.5px;color:#aab2c4;margin-top:12px;}
 
   /* 途中の応募ボタン */
@@ -343,13 +346,13 @@
     <div class="h2"><small>AREA</small><b>勤務エリア</b></div>
     <p class="areas-lead">各エリアの店舗を拠点に、スタッフを送迎します。<br>ご希望のエリアを選んでご応募ください。</p>
     <div class="areas">
-      <div class="area"><b>大阪・北新地</b><p>北新地エリアの店舗</p></div>
+      <div class="area"><div class="area-head"><b>大阪・北新地</b><span class="area-wage">時給1,700円〜</span></div><p>北新地エリアの店舗</p></div>
       <div class="area"><b>大阪・ミナミ</b><p>ミナミエリアの店舗</p></div>
       <div class="area area-wide">
-        <b>大阪・その他</b>
+        <div class="area-head"><b>大阪・その他</b><span class="area-wage">時給1,500円〜</span></div>
         <div class="area-chips"><span>十三</span><span>西中島</span><span>京橋</span><span>江坂</span><span>高槻</span><span>堺東</span><span>布施</span><span class="etc">ほか</span></div>
       </div>
-      <div class="area"><b>京都</b><p>京都市内の店舗</p></div>
+      <div class="area"><div class="area-head"><b>京都</b><span class="area-wage">時給1,500円〜</span></div><p>京都市内の店舗</p></div>
       <div class="area"><b>神戸</b><p>三宮エリアの店舗</p></div>
       <div class="area area-wide"><b>その他関西</b><p>上記以外のエリアも、お気軽にご相談ください</p></div>
     </div>
