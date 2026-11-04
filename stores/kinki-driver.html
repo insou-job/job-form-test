@@ -63,9 +63,8 @@
   .num{font-family:"Oswald","Noto Sans JP",sans-serif;letter-spacing:.02em;}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;background:var(--night);color:#fff;padding:40px 22px 34px;overflow:hidden;}
-  .hero-road{position:absolute;inset:0;pointer-events:none;}
-  .hero-road svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:62%;}
+  .hero{position:relative;color:#fff;padding:40px 22px 34px;overflow:hidden;
+    background:linear-gradient(180deg,rgba(14,19,32,.86) 0%,rgba(14,19,32,.80) 45%,rgba(14,19,32,.94) 100%),url("/images/kinki-driver-hero.jpg") 62% center / cover no-repeat,var(--night);}
   .hero-inner{position:relative;}
   .hero .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--night);background:var(--amber);padding:3px 12px;border-radius:3px;margin-bottom:16px;}
   .hero h1{font-size:30px;line-height:1.35;font-weight:900;margin-bottom:12px;letter-spacing:.02em;}
@@ -105,28 +104,22 @@
   .pt span{display:block;font-size:11.5px;color:var(--sub);line-height:1.6;}
 
   /* areas */
-  .areas{display:flex;flex-direction:column;gap:10px;}
-  .area{background:var(--night-3);border:1px solid var(--line-dark);border-radius:8px;padding:14px 16px;}
-  .area-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px;}
-  .area-head b{font-size:16px;}
-  .area-head span{font-size:11px;color:var(--night);background:var(--amber);border-radius:3px;padding:1px 8px;font-weight:700;white-space:nowrap;}
-  .area p{font-size:12.5px;color:#c9cfdc;}
-  .area p.shop{color:#fff;font-weight:500;}
+  .areas-lead{font-size:13px;color:#c9cfdc;margin:-8px 0 16px;}
+  .areas{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .area{background:var(--night-3);border:1px solid var(--line-dark);border-top:3px solid var(--amber);border-radius:8px;padding:12px 14px;}
+  .area-wide{grid-column:1 / -1;}
+  .area b{display:block;font-size:15.5px;margin-bottom:2px;}
+  .area p{font-size:12px;color:#c9cfdc;}
+  .area-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+  .area-chips span{font-size:12.5px;font-weight:700;color:var(--night);background:var(--amber);border-radius:3px;padding:1px 9px;}
+  .area-chips span.etc{background:transparent;color:#c9cfdc;font-weight:500;padding:1px 2px;}
   .areas-note{font-size:11.5px;color:#aab2c4;margin-top:12px;}
 
-  /* wage */
-  .wage-box{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 16px;margin-bottom:12px;}
-  .wage-box .t{font-size:13px;font-weight:700;margin-bottom:10px;}
-  .wtable{width:100%;border-collapse:collapse;font-size:14px;}
-  .wtable th,.wtable td{padding:8px 4px;border-bottom:1px solid var(--line);text-align:left;}
-  .wtable td{text-align:right;font-weight:700;}
-  .wtable td .num{font-size:19px;}
-  .wtable tr:last-child th,.wtable tr:last-child td{border-bottom:none;}
-  .wtable tr.top td{color:var(--amber-deep);}
-  .calc{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--night);color:#fff;border-radius:8px;padding:14px 16px;margin-bottom:10px;}
-  .calc small{display:block;font-size:11px;color:#aab2c4;}
-  .calc b{font-size:24px;color:var(--amber);line-height:1.2;}
-  .fine{font-size:11px;color:var(--sub);}
+  /* 途中の応募ボタン */
+  .cta-band{padding:30px 20px;background:var(--night);color:#fff;text-align:center;}
+  .cta-msg{font-size:14.5px;font-weight:700;margin-bottom:12px;}
+  .cta-msg::before{content:"";display:inline-block;width:18px;height:2px;background:var(--amber);vertical-align:middle;margin-right:10px;}
+  .cta-msg::after{content:"";display:inline-block;width:18px;height:2px;background:var(--amber);vertical-align:middle;margin-left:10px;}
 
   /* job */
   .job-list{display:flex;flex-direction:column;gap:10px;}
@@ -187,6 +180,56 @@
   .s-line{background:var(--line-green);color:#fff;}
   .s-web{background:var(--amber);color:var(--night);}
   .s-tel{background:#fff;color:var(--ink);}
+
+  /* =========================================================
+     レスポンシブ（タブレット・PC）
+     スマホ（〜767px）は上のスタイルのまま。広い画面では
+     各セクションの中身を最大880pxで中央にそろえ、段組みにする。
+     ========================================================= */
+  @media (min-width:768px){
+    body{background:var(--paper);}
+    .wrap{max-width:none;padding-bottom:0;}
+    .hero,.section,.cta-band,footer{padding-left:max(32px, calc((100% - 880px) / 2));padding-right:max(32px, calc((100% - 880px) / 2));}
+    .section{padding-top:64px;padding-bottom:64px;}
+    .h2{text-align:center;}
+    .h2 b{font-size:25px;}
+
+    /* ヒーロー：1列・中央ぞろえで大きく */
+    .hero{padding-top:88px;padding-bottom:88px;text-align:center;}
+    .hero-inner{max-width:720px;margin:0 auto;}
+    .hero .tag{font-size:13px;padding:4px 16px;}
+    .hero h1{font-size:46px;line-height:1.35;}
+    .hero .lead{font-size:16px;}
+    .wage-hero{justify-content:center;max-width:620px;margin:0 auto 14px;padding:16px 20px;}
+    .wage-hero b{font-size:46px;}
+    .hero-facts{max-width:620px;margin:0 auto 28px;gap:12px;}
+    .hero-facts div{padding:12px 6px;}
+    .hero-facts b{font-size:16px;}
+    .hero .btn-web{max-width:420px;margin:0 auto;min-height:62px;font-size:17px;}
+
+    .cta-band .btn-stack{flex-direction:row;max-width:640px;margin:0 auto;}
+    .cta-band .btn{flex:1;}
+
+    .points{grid-template-columns:repeat(3,1fr);gap:14px;}
+    .pt{padding:18px 16px;}
+
+    .areas{gap:12px;}
+    .areas-lead{text-align:center;}
+    .areas-note{text-align:center;}
+
+    .job-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+    .job{flex-direction:column;}
+
+    .req-table,.faq{max-width:720px;margin-left:auto;margin-right:auto;}
+    .faq{margin-bottom:10px;}
+
+    .entry .lead{text-align:center;}
+    .entry-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px;align-items:start;}
+    .entry-grid .btn-stack{position:sticky;top:24px;}
+    .form-card,.thanks{margin-top:0;}
+
+    .sticky{display:none;}
+  }
 </style>
 
 <script type="application/ld+json">
@@ -194,7 +237,7 @@
   "@context": "https://schema.org/",
   "@type": "JobPosting",
   "title": "送迎ドライバー（近畿エリア）",
-  "description": "大阪（北新地・ミナミほか）・京都・神戸など近畿エリアのナイト店舗で、在籍スタッフを自宅と店舗の間で安全に送迎するドライバーを募集。好きな音楽を聴きながらドライブ感覚で働けます。髪型・服装自由、Wワーク歓迎、履歴書不要。 【給与】時給1,500円〜1,900円（店舗・出勤日数により異なる。北新地エリアの例：週1〜3回1,700円／週4回1,800円／週5回1,850円／週6回1,900円＋距離手当） 【勤務時間】0:00〜5:00（シフト制） 【応募資格】18歳以上（店舗により20歳以上）・ETC搭載車を持ち込める方 【待遇】日払いOK／高速代別途支給（店舗により）／距離手当（店舗により）／長期勤務歓迎",
+  "description": "大阪（北新地・ミナミ・十三・西中島・京橋・江坂・高槻・堺東・布施ほか）・京都・神戸など近畿エリアのナイト店舗で、在籍スタッフを自宅と店舗の間で安全に送迎するドライバーを募集。好きな音楽を聴きながらドライブ感覚で働けます。髪型・服装自由、Wワーク歓迎、履歴書不要。 【給与】時給1,500円〜1,900円（店舗・出勤日数により異なる／距離手当のある店舗あり） 【勤務時間】0:00〜5:00（シフト制） 【応募資格】18歳以上（店舗により20歳以上）・ETC搭載車を持ち込める方 【待遇】日払いOK／高速代別途支給（店舗により）／距離手当（店舗により）／長期勤務歓迎",
   "identifier": {
     "@type": "PropertyValue",
     "name": "ジョブチャレ",
@@ -214,8 +257,7 @@
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "曽根崎新地1-6-16 メッセージビルB1F",
-        "addressLocality": "大阪市北区",
+        "addressLocality": "大阪市",
         "addressRegion": "大阪府",
         "addressCountry": "JP"
       }
@@ -224,19 +266,17 @@
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "西中島3-16-15 Refuge NISHINAKAJIMA B1F",
-        "addressLocality": "大阪市淀川区",
-        "addressRegion": "大阪府",
-        "addressCountry": "JP"
-      }
-    },
-    {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "東木屋町通四条上ル2丁目下樵木町205 モンドビル1F・2F",
-        "addressLocality": "京都市中京区",
+        "addressLocality": "京都市",
         "addressRegion": "京都府",
+        "addressCountry": "JP"
+      }
+    },
+    {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "神戸市",
+        "addressRegion": "兵庫県",
         "addressCountry": "JP"
       }
     }
@@ -260,26 +300,8 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-road" aria-hidden="true">
-      <svg viewBox="0 0 400 300" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#f4b740" stop-opacity="0"/>
-            <stop offset=".6" stop-color="#f4b740" stop-opacity=".55"/>
-            <stop offset="1" stop-color="#ffe2a0" stop-opacity=".9"/>
-          </linearGradient>
-          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#e2553a" stop-opacity="0"/>
-            <stop offset="1" stop-color="#e2553a" stop-opacity=".55"/>
-          </linearGradient>
-        </defs>
-        <path d="M-10 250 C 120 200, 260 150, 410 70" stroke="url(#g1)" stroke-width="3" fill="none"/>
-        <path d="M-10 266 C 130 214, 270 166, 410 92" stroke="url(#g1)" stroke-width="1.6" fill="none"/>
-        <path d="M-10 282 C 140 232, 280 186, 410 116" stroke="url(#g2)" stroke-width="2.2" fill="none"/>
-        <path d="M-10 296 C 150 250, 290 206, 410 140" stroke="url(#g2)" stroke-width="1.2" fill="none"/>
-      </svg>
-    </div>
     <div class="hero-inner">
+
       <span class="tag">KINKI AREA · DRIVER</span>
       <h1>深夜の5時間、<br><em>ドライブ感覚</em>で<br>しっかり稼ぐ。</h1>
       <p class="lead">大阪・京都・神戸ほか近畿エリアの店舗で<br>送迎ドライバーをまとめて募集中です。</p>
@@ -307,54 +329,35 @@
     </div>
   </section>
 
+  <!-- 途中の応募ボタン -->
+  <div class="cta-band">
+    <p class="cta-msg">お気軽にご相談ください</p>
+    <div class="btn-stack">
+      <a class="btn btn-web" href="#entry" data-cta="middle">WEBで応募する<small>1分で完了・履歴書不要</small></a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40722klevt" target="_blank" rel="noopener noreferrer" data-cta="middle">LINEで気軽に相談する</a>
+    </div>
+  </div>
+
   <!-- Areas -->
   <section class="section dark">
     <div class="h2"><small>AREA</small><b>勤務エリア</b></div>
+    <p class="areas-lead">各エリアの店舗を拠点に、スタッフを送迎します。<br>ご希望のエリアを選んでご応募ください。</p>
     <div class="areas">
-      <div class="area">
-        <div class="area-head"><b>大阪・北新地</b><span>時給1,700円〜</span></div>
-        <p class="shop">ミュゼルヴァ北新地（キャバクラ）</p>
-        <p>JR東西線 北新地駅 徒歩3分</p>
+      <div class="area"><b>大阪・北新地</b><p>北新地エリアの店舗</p></div>
+      <div class="area"><b>大阪・ミナミ</b><p>ミナミエリアの店舗</p></div>
+      <div class="area area-wide">
+        <b>大阪・その他</b>
+        <div class="area-chips"><span>十三</span><span>西中島</span><span>京橋</span><span>江坂</span><span>高槻</span><span>堺東</span><span>布施</span><span class="etc">ほか</span></div>
       </div>
-      <div class="area">
-        <div class="area-head"><b>大阪・その他</b><span>時給1,500円〜</span></div>
-        <p class="shop">SECRET GARDEN 西中島（キャバクラ）</p>
-        <p>御堂筋線 西中島南方駅・阪急 南方駅すぐ</p>
-      </div>
-      <div class="area">
-        <div class="area-head"><b>京都・木屋町</b><span>時給1,500円〜</span></div>
-        <p class="shop">ELENA HOUSE 京都（キャバクラ）</p>
-        <p>阪急 京都河原町駅 徒歩3分</p>
-      </div>
-      <div class="area">
-        <div class="area-head"><b>ミナミ・神戸・その他関西</b></div>
-        <p>希望エリアを選んでご応募ください。近い店舗の募集状況をご案内します。</p>
-      </div>
+      <div class="area"><b>京都</b><p>京都市内の店舗</p></div>
+      <div class="area"><b>神戸</b><p>三宮エリアの店舗</p></div>
+      <div class="area area-wide"><b>その他関西</b><p>上記以外のエリアも、お気軽にご相談ください</p></div>
     </div>
-    <p class="areas-note">※勤務する店舗は、ご希望エリアと募集状況をもとに担当からご案内します。「どこでも」も選べます。</p>
-  </section>
-
-  <!-- Wage -->
-  <section class="section">
-    <div class="h2"><small>SALARY</small><b>お給料のめやす</b></div>
-    <div class="calc">
-      <div><small>時給1,500円 × 5時間（0:00〜5:00）</small>1日あたり</div>
-      <b class="num">7,500円〜</b>
-    </div>
-    <div class="wage-box">
-      <p class="t">例：北新地エリア（出勤日数で時給アップ）</p>
-      <table class="wtable">
-        <tr><th>週1〜3回</th><td><span class="num">1,700</span>円</td></tr>
-        <tr><th>週4回</th><td><span class="num">1,800</span>円</td></tr>
-        <tr><th>週5回</th><td><span class="num">1,850</span>円</td></tr>
-        <tr class="top"><th>週6回</th><td><span class="num">1,900</span>円</td></tr>
-      </table>
-    </div>
-    <p class="fine">※北新地エリアの例は、上記の時給に距離手当が加わります。時給・手当は店舗や出勤日数により異なり、金額を保証するものではありません。詳細は面接時にご確認ください（2026年10月時点の掲載情報）。</p>
+    <p class="areas-note">※勤務する店舗は、ご希望のエリアと募集状況をもとに担当からご案内します。「どこでも」も選べます。</p>
   </section>
 
   <!-- Job -->
-  <section class="section" style="padding-top:0;">
+  <section class="section">
     <div class="h2"><small>JOB</small><b>お仕事の内容</b></div>
     <div class="job-list">
       <div class="job"><i>01</i><div><b>お店のスタッフを送迎</b><p>営業が終わったスタッフを、店舗からご自宅などの希望地まで安全にお送りします。</p></div></div>
@@ -363,12 +366,21 @@
     </div>
   </section>
 
+  <!-- 途中の応募ボタン -->
+  <div class="cta-band">
+    <p class="cta-msg">質問だけでもOK。お気軽にご相談ください</p>
+    <div class="btn-stack">
+      <a class="btn btn-web" href="#entry" data-cta="middle">WEBで応募する<small>1分で完了・履歴書不要</small></a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/%40722klevt" target="_blank" rel="noopener noreferrer" data-cta="middle">LINEで気軽に相談する</a>
+    </div>
+  </div>
+
   <!-- Requirements -->
-  <section class="section" style="padding-top:0;">
+  <section class="section">
     <div class="h2"><small>REQUIREMENTS</small><b>募集要項</b></div>
     <dl class="req-table">
       <div><dt>職種</dt><dd>送迎ドライバー</dd></div>
-      <div><dt>勤務地</dt><dd>大阪（北新地・ミナミ・その他）／京都／神戸／その他関西</dd></div>
+      <div><dt>勤務地</dt><dd>大阪（北新地・ミナミ・十三・西中島・京橋・江坂・高槻・堺東・布施 ほか）／京都／神戸／その他関西</dd></div>
       <div><dt>給与</dt><dd>時給1,500円〜1,900円<br>（店舗・出勤日数により異なる／距離手当のある店舗あり）</dd></div>
       <div><dt>勤務時間</dt><dd>0:00〜5:00（シフト制）</dd></div>
       <div><dt>応募資格</dt><dd>18歳以上（店舗により20歳以上）<br>ETC搭載車を持ち込める方</dd></div>
@@ -388,7 +400,8 @@
   <!-- Entry -->
   <section class="section entry" id="entry">
     <div class="h2"><small>ENTRY</small><b>ドライバーに応募する</b></div>
-    <p class="lead">LINE・電話・WEBフォームのいずれかでご応募ください。<br>担当より折り返しご連絡します。</p>
+    <p class="lead">お気軽にご相談ください。<br>LINE・電話・WEBフォームのいずれかで受け付けています。</p>
+    <div class="entry-grid">
     <div class="btn-stack">
       <a class="btn btn-line" href="https://line.me/R/ti/p/%40722klevt" target="_blank" rel="noopener noreferrer" data-cta="entry">LINEで応募・相談する</a>
       <a class="btn btn-tel" href="tel:0120515295" data-cta="entry">電話で応募 0120-515-295<small>月〜金 10:00〜21:00／土 13:00〜18:00</small></a>
@@ -404,7 +417,7 @@
           <optgroup label="大阪">
             <option value="大阪・北新地">北新地</option>
             <option value="大阪・ミナミ">ミナミ</option>
-            <option value="大阪・その他">その他の大阪</option>
+            <option value="大阪・その他">その他の大阪（十三・京橋・江坂など）</option>
           </optgroup>
           <option value="京都">京都</option>
           <option value="神戸">神戸</option>
@@ -444,6 +457,7 @@
     <div class="thanks" id="thanks" hidden>
       <p class="t">ご応募ありがとうございます</p>
       <p>担当者より折り返しご連絡いたします。</p>
+    </div>
     </div>
   </section>
 
