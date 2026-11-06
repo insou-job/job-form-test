@@ -533,8 +533,8 @@
         </div>
       </div>
       <label class="field">
-        <span>メールアドレス<span class="opt">任意</span></span>
-        <input type="email" id="email" name="email" autocomplete="email" placeholder="入力すると受付確認メールが届きます">
+        <span>メールアドレス<span class="req">必須</span></span>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="例）taro@example.com" required>
       </label>
       <label class="field">
         <span>備考欄<span class="opt">任意</span></span>
@@ -591,7 +591,7 @@
   const STORE_NAME = "全国スタッフ募集";     // 店舗名列には「全国スタッフ募集／希望エリア」で記録
   const FORM_TYPE = "エリアまとめLP";
   const JOB_TYPE = "スタッフ応募";            // このLPはホールスタッフ募集のみ（職種の選択欄なし）
-  const REQUIRED_FIELDS = ["name", "tel", "age"]; // 「必須」表示の項目と合わせて変更してください（希望エリアはブラウザ側で必須チェック）
+  const REQUIRED_FIELDS = ["name", "tel", "age", "email"]; // 「必須」表示の項目と合わせて変更してください（希望エリアはブラウザ側で必須チェック）
 
   const form = document.getElementById("entryForm");
   const statusEl = document.getElementById("status");
