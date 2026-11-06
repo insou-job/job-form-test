@@ -303,7 +303,7 @@
       <div class="fg"><label for="name">お名前<span class="req">必須</span></label><input type="text" id="name" name="name" placeholder="例）三重 花子" autocomplete="name" required></div>
       <div class="fg"><label for="tel">電話番号<span class="req">必須</span></label><input type="tel" id="tel" name="tel" placeholder="例）090-1234-5678" autocomplete="tel" required></div>
       <div class="fg"><label for="age">年齢（20歳以上）<span class="req">必須</span></label><input type="number" id="age" name="age" placeholder="例）24" min="20" max="99" inputmode="numeric" required></div>
-      <div class="fg"><label for="email">メールアドレス<span class="opt">任意</span></label><input type="email" id="email" name="email" placeholder="入力すると受付確認メールが届きます" autocomplete="email"></div>
+      <div class="fg"><label for="email">メールアドレス<span class="req">必須</span></label><input type="email" id="email" name="email" placeholder="例）hanako@example.com" autocomplete="email" required></div>
       <div class="fg"><label for="storeSelect">希望のお店<span class="opt">任意</span></label>
         <select name="storeChoice" id="storeSelect">
           <option value="どこでも／相談したい">どこでも／相談したい</option>
@@ -359,7 +359,7 @@
   const FORM_TYPE = "エリアまとめLP";
   const JOB_TYPE = "キャスト応募";           // このLPはキャスト募集のみ（職種の選択欄なし）
   const NOTIFY_KEY = "mie";                // GAS側の振り分けキー（通知先・書き込みタブはGAS内で管理。宛先はここに書かない）
-  const REQUIRED_FIELDS = ["name", "tel", "age"]; // 「必須」表示の項目と合わせて変更してください
+  const REQUIRED_FIELDS = ["name", "tel", "age", "email"]; // 「必須」表示の項目と合わせて変更してください
 
   const form = document.getElementById("entryForm");
   const statusEl = document.getElementById("status");

@@ -487,8 +487,8 @@
         <input type="number" id="age" name="age" placeholder="例）24" min="20" max="99" inputmode="numeric" required>
       </div>
       <div class="form-group">
-        <label for="email">メールアドレス<span class="opt">任意</span></label>
-        <input type="email" id="email" name="email" placeholder="入力すると受付確認メールが届きます" autocomplete="email">
+        <label for="email">メールアドレス<span class="req">必須</span></label>
+        <input type="email" id="email" name="email" placeholder="例）hanako@example.com" autocomplete="email" required>
       </div>
       <div class="form-group">
         <label for="message">備考欄<span class="opt">任意</span></label>
@@ -529,7 +529,7 @@
   const FORM_TYPE = "店舗LP";
   const JOB_TYPE = "キャスト応募";            // このLPはキャスト募集のみ（職種の選択欄なし）
   const NOTIFY_KEY = "nishiki";             // GAS側の振り分けキー（通知先・書き込みタブはGAS内で管理。宛先はここに書かない）
-  const REQUIRED_FIELDS = ["name", "tel", "age"]; // 「必須」表示の項目と合わせて変更してください
+  const REQUIRED_FIELDS = ["name", "tel", "age", "email"]; // 「必須」表示の項目と合わせて変更してください
 
   const form = document.getElementById("entryForm");
   const statusEl = document.getElementById("status");
