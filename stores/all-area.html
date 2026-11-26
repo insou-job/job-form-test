@@ -152,6 +152,13 @@ h2{font-family:'Zen Maru Gothic',sans-serif;font-size:22px;line-height:1.45;marg
 .faq summary{font-weight:700;cursor:pointer}
 .faq p{margin:8px 0 0;font-size:14px}
 
+.other-jobs{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin:0 18px}
+.other-jobs p{margin:0 0 10px;font-weight:700;font-size:14px}
+.other-jobs ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.other-jobs a{display:flex;justify-content:space-between;align-items:center;gap:8px;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-weight:700}
+.other-jobs small{display:block;font-weight:400;font-size:12px;color:var(--sub)}
+@media (min-width:768px){ .other-jobs{margin:0 24px} .other-jobs ul{grid-template-columns:1fr 1fr} }
+
 /* ===== ENTRY ===== */
 #entry{background:#fff}
 .entry-grid{display:grid;gap:18px}
@@ -293,6 +300,14 @@ footer{text-align:center;padding:28px 18px 40px;font-size:12px;color:var(--sub)}
   <details><summary>何歳から応募できますか？</summary><p>お店によって18歳以上または20歳以上です。各お店のカードに年齢を表示しています。高校生は応募できません。</p></details>
   <details><summary>未経験でも大丈夫？</summary><p>未経験から始める方を歓迎しているお店が多くあります。不安なことは応募前にLINE・電話でも相談できます。</p></details>
 </section>
+
+<aside class="other-jobs" aria-label="キャスト以外のお仕事">
+  <p>スタッフ・ドライバー希望の方はこちら</p>
+  <ul>
+    <li><a href="/stores/staff-zenkoku.html" data-track="other_job" data-store="全国ホールスタッフ募集"><span>ホールスタッフ募集<small>ボーイ・ガール／男女OK・全国</small></span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="/stores/kinki-driver.html" data-track="other_job" data-store="近畿ドライバー募集"><span>ドライバー募集<small>送迎ドライバー／大阪・京都・神戸ほか近畿</small></span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+  </ul>
+</aside>
 
 <section id="entry" aria-labelledby="entry-h">
   <p class="sec-label">ENTRY</p>
@@ -558,6 +573,12 @@ fetch(DATA_URL, { cache: "no-cache" }).then(r => r.json()).then(d => {
   $("regions").appendChild(el("p", "empty", "店舗情報を読み込めませんでした。お手数ですが、LINE・電話・下のフォームからご応募ください。"));
   renderSel();
   ["大阪","京都","兵庫","滋賀","奈良","和歌山","三重","岐阜","石川","岡山","広島","香川","高知","福岡","仙台"].forEach(n => { const o = el("option", null, n); o.value = n; $("areaSelect").appendChild(o); });
+});
+
+/* ===== 他職種LPへのリンク ===== */
+document.addEventListener("click", e => {
+  const a = e.target.closest('a[data-track="other_job"]'); if (!a) return;
+  track("other_job_click", { store: STORE_NAME, target: a.dataset.store });
 });
 
 /* ===== アナリティクス：LINE・電話（全LP共通の名前） ===== */
