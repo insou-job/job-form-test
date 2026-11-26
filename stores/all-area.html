@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+<script>
+  if (!location.hostname.includes("form.insou-job.com")) {
+    var m = document.createElement("meta");
+    m.name = "robots";
+    m.content = "noindex, nofollow";
+    document.head.appendChild(m);
+  }
+</script>
+
+<script>
+(function(){
+  var GA_ID = location.hostname.includes("form.insou-job.com")
+    ? "G-SC21VS71MC"
+    : "G-9M3KQZSL1B";
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag("js", new Date());
+  gtag("config", GA_ID);
+})();
+</script>
+<title>エリアから選べるナイトワーク求人｜体入・未経験歓迎｜ジョブチャレ</title>
+<meta name="description" content="大阪・京都・兵庫・滋賀・奈良・和歌山・三重・岐阜・石川・岡山・広島・香川・高知・福岡・仙台のナイトワーク求人。エリアを選んで、気になるお店にこのページからそのまま応募できます。同じエリアなら複数のお店にまとめて応募OK。高校生不可。">
+<link rel="canonical" href="https://form.insou-job.com/stores/all-area.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="エリアから選べるナイトワーク求人｜ジョブチャレ">
+<meta property="og:description" content="エリアを選んで、気になるお店にそのまま応募。同じエリアなら複数のお店にまとめて応募できます。">
+<meta property="og:url" content="https://form.insou-job.com/stores/all-area.html">
+<meta property="og:image" content="https://form.insou-job.com/images/jobchalle-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@700&display=swap" rel="stylesheet">
+
+<!-- 店舗データ：/data/west-stores.json（ジョブチャレ検索結果から作成。関東は除外）。
+     応募はこのページ内のフォーム（GAS送信・通常の通知先）。完了時に generate_lead を送る（広告CV）。
+     同じエリア（都道府県単位）のお店なら複数選択して1回で応募できる。 -->
+
+<style>
+:root{
+  --bg:#fbf7f4; --card:#fff; --ink:#2d2733; --sub:#6d6473; --line:#ece3df;
+  --rose:#d9466f; --rose-d:#b8325a; --rose-l:#fde9ef; --gold:#b98a2f; --navy:#26233a;
+  --line-green:#06c755;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:1.7;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.wrap{max-width:880px;margin:0 auto;padding-bottom:84px}
+section{padding:36px 18px}
+.sec-label{font-size:12px;letter-spacing:.2em;color:var(--rose);font-weight:700;margin:0}
+h2{font-family:'Zen Maru Gothic',sans-serif;font-size:22px;line-height:1.45;margin:4px 0 14px}
+.ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.sprite{display:none}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(160deg,#2b2540 0%,#3d2a47 55%,#5a2f4d 100%);color:#fff;padding:34px 18px 30px;text-align:center}
+.hero .brand{display:inline-block;font-size:12px;letter-spacing:.15em;border:1px solid rgba(255,255,255,.45);border-radius:99px;padding:3px 14px;margin:0 0 14px}
+.hero h1{font-family:'Zen Maru Gothic',sans-serif;font-size:27px;line-height:1.45;margin:0 0 10px}
+.hero h1 em{font-style:normal;color:#ffc2d4}
+.hero .sub{font-size:14px;margin:0 0 18px;color:rgba(255,255,255,.9)}
+.hero .count{display:inline-flex;gap:6px;align-items:baseline;background:rgba(255,255,255,.12);border-radius:12px;padding:6px 14px;margin-bottom:6px}
+.hero .count b{font-size:26px;color:#ffd47a;font-family:'Zen Maru Gothic',sans-serif}
+.chips{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:0;margin:14px 0 0}
+.chips li{font-size:12px;background:rgba(255,255,255,.14);border-radius:99px;padding:3px 10px}
+
+/* ===== AREA PICKER ===== */
+.area-pick{background:#fff;border-radius:22px;margin:-14px 12px 0;padding:22px 14px 18px;box-shadow:0 6px 24px rgba(60,30,50,.08);position:relative}
+.area-pick h2{text-align:center;font-size:20px;margin-top:0}
+.region{margin-top:12px}
+.region p{font-size:12px;color:var(--sub);margin:0 0 6px;font-weight:700}
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.area-btn{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:10px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;line-height:1.3}
+.area-btn b{font-size:16px}
+.area-btn small{font-size:11px;color:var(--sub)}
+.area-btn[aria-pressed="true"]{border-color:var(--rose);background:var(--rose-l);color:var(--rose-d)}
+.omakase{display:block;text-align:center;margin-top:14px;font-size:13px;color:var(--sub)}
+
+/* ===== FILTER + LIST ===== */
+#shops{padding-top:24px}
+.filter-bar{position:sticky;top:0;z-index:20;background:rgba(251,247,244,.96);backdrop-filter:blur(6px);margin:0 -18px 12px;padding:10px 18px;border-bottom:1px solid var(--line)}
+.filter-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.cur-area{font-weight:700;font-size:16px;display:flex;align-items:center;gap:6px}
+.cur-area button{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:99px;padding:2px 10px;cursor:pointer;color:var(--sub)}
+.seg{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:#fff}
+.seg button{border:0;background:none;padding:6px 11px;font-size:13px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.pay-sel{border:1px solid var(--line);border-radius:99px;padding:6px 10px;font-size:13px;background:#fff;color:var(--ink)}
+.result-n{font-size:13px;color:var(--sub);margin:0 0 10px}
+.empty{background:#fff;border:1px dashed var(--line);border-radius:16px;padding:24px;text-align:center;color:var(--sub)}
+.note-pay{font-size:12px;color:var(--sub);margin:6px 0 0}
+
+.shops{display:grid;grid-template-columns:1fr;gap:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.shop.is-sel{border-color:var(--rose);box-shadow:0 0 0 2px var(--rose-l)}
+.shop .photo{position:relative;aspect-ratio:1000/676;background:#eee5e0}
+.shop .photo img{width:100%;height:100%;object-fit:cover}
+.shop .photo.noimg::after{content:"写真準備中";position:absolute;inset:0;display:grid;place-items:center;color:var(--sub);font-size:13px}
+.badges{position:absolute;left:8px;top:8px;display:flex;gap:5px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:700;background:rgba(255,255,255,.94);border-radius:99px;padding:2px 9px}
+.badge.a20{color:#8a5a00}
+.badge.a18{color:#1f7a52}
+.shop-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.shop .meta{font-size:12px;color:var(--sub);margin:0}
+.shop h3{margin:0;font-size:17px;line-height:1.4}
+.shop .pay{font-size:14px;margin:0;display:flex;align-items:baseline;gap:4px;flex-wrap:wrap}
+.shop .pay b{font-size:20px;color:var(--rose-d);font-family:'Zen Maru Gothic',sans-serif}
+.shop .pay small{font-size:11px;color:var(--sub)}
+.shop .catch{font-size:13px;margin:0;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.shop details{font-size:13px;border-top:1px dashed var(--line);padding-top:6px}
+.shop summary{cursor:pointer;color:var(--rose-d);font-weight:700;list-style:none}
+.shop summary::-webkit-details-marker{display:none}
+.shop summary::after{content:" ＋"}
+.shop details[open] summary::after{content:" －"}
+.shop dl{margin:8px 0 0;display:grid;grid-template-columns:4.5em 1fr;gap:4px 8px}
+.shop dt{color:var(--sub);font-weight:700}
+.shop dd{margin:0;white-space:pre-line}
+.tagl{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0 0;padding:0;list-style:none}
+.tagl li{font-size:11px;background:#f5efec;border-radius:6px;padding:1px 7px}
+.pick{margin-top:auto;border:0;border-radius:12px;padding:12px;font-weight:700;cursor:pointer;background:var(--rose);color:#fff;display:flex;justify-content:center;gap:6px;align-items:center}
+.pick[aria-pressed="true"]{background:#fff;color:var(--rose-d);box-shadow:inset 0 0 0 2px var(--rose)}
+.more-btn{display:block;margin:16px auto 0;border:1px solid var(--line);background:#fff;border-radius:99px;padding:10px 26px;cursor:pointer;font-weight:700}
+
+/* ===== MIDDLE CTA ===== */
+.mid-cta{background:var(--navy);color:#fff;text-align:center;padding:26px 18px}
+.mid-cta p{margin:0 0 12px;font-weight:700}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:99px;padding:12px 22px;font-weight:700;text-decoration:none;border:0;cursor:pointer}
+.btn.primary{background:var(--rose);color:#fff}
+.btn.line{background:var(--line-green);color:#fff}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+
+/* ===== STEPS / FAQ ===== */
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:10px;counter-reset:st}
+.steps li{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px 12px 52px;position:relative;counter-increment:st}
+.steps li::before{content:counter(st);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.steps b{display:block}
+.steps span{font-size:13px;color:var(--sub)}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:8px}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin:8px 0 0;font-size:14px}
+
+/* ===== ENTRY ===== */
+#entry{background:#fff}
+.entry-grid{display:grid;gap:18px}
+.contact{display:grid;gap:10px;align-content:start}
+.contact .tel-note{font-size:12px;color:var(--sub);text-align:center;margin:-4px 0 0}
+.sel-box{background:var(--rose-l);border-radius:16px;padding:12px 14px;margin-bottom:14px}
+.sel-box p{margin:0;font-size:13px;font-weight:700;color:var(--rose-d)}
+.sel-list{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+.sel-list li{background:#fff;border-radius:99px;padding:3px 6px 3px 12px;font-size:13px;display:flex;align-items:center;gap:4px}
+.sel-list button{border:0;background:#f2e3e8;border-radius:50%;width:22px;height:22px;cursor:pointer;line-height:1;color:var(--rose-d)}
+.sel-box .hint{font-weight:400;color:var(--sub);font-size:12px;margin-top:6px}
+.field{margin-bottom:14px}
+.field label,.field .lbl{display:block;font-weight:700;font-size:14px;margin-bottom:5px}
+.req{font-size:11px;background:var(--rose);color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:1px}
+.opt{font-size:11px;background:#eee;color:var(--sub);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:1px}
+input[type=text],input[type=tel],input[type=email],input[type=number],select,textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--rose)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;margin:6px 0 14px}
+.consent input{width:20px;height:20px;margin-top:3px;flex:none}
+.submit{width:100%;font-size:17px;padding:15px}
+#status.error{color:#c0392b;font-weight:700;margin-top:10px}
+.age-warn{color:#c0392b;font-size:13px;font-weight:700;margin:6px 0 0}
+.thanks{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 18px;text-align:center}
+.thanks[hidden],.form-card[hidden]{display:none}
+.thanks .t{font-family:'Zen Maru Gothic',sans-serif;font-size:20px;color:var(--rose);margin-bottom:6px}
+
+/* ===== FOOTER / STICKY ===== */
+footer{text-align:center;padding:28px 18px 40px;font-size:12px;color:var(--sub)}
+.jobchalle-footer-link img{width:150px;margin:0 auto 10px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom));display:flex;gap:8px}
+.sticky .btn{flex:1;padding:11px 6px;font-size:14px}
+.sticky .btn.tel{background:var(--navy);color:#fff;flex:.7}
+.sticky .sel-go{flex:2}
+.toast{position:fixed;left:50%;bottom:88px;transform:translateX(-50%);background:rgba(38,35,58,.94);color:#fff;font-size:13px;padding:10px 16px;border-radius:12px;z-index:40;max-width:92%;text-align:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.toast.show{opacity:1}
+
+@media (min-width:768px){
+  .hero{padding:56px 24px 44px}
+  .hero h1{font-size:36px}
+  .area-pick{margin:-20px 24px 0;padding:28px 28px 22px}
+  .areas{grid-template-columns:repeat(6,1fr)}
+  section{padding:44px 24px}
+  .filter-bar{margin:0 -24px 14px;padding:10px 24px}
+  .shops{grid-template-columns:repeat(3,1fr)}
+  .entry-grid{grid-template-columns:1fr 1.5fr;align-items:start}
+  .sticky{display:none}
+  .wrap{padding-bottom:0}
+  .toast{bottom:24px}
+}
+@media (min-width:600px) and (max-width:767px){ .shops{grid-template-columns:repeat(2,1fr)} }
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.6 4.2-2.1 1.4a12 12 0 0 0 6.4 6.4l1.4-2.1L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</defs></svg>
+<div class="wrap">
+
+<header class="hero">
+  <p class="brand">ジョブチャレ　エリア別求人</p>
+  <h1>近くのお店を選んで、<br><em>このまま応募</em>できる。</h1>
+  <p class="sub">エリアを選ぶだけ。同じエリアなら<br>気になるお店にまとめて応募できます。</p>
+  <div class="count"><b id="totalCount">100</b><span>店舗以上から選べます</span></div>
+  <ul class="chips"><li>未経験OK</li><li>体験入店OK</li><li>日払い</li><li>シフト自由</li><li>送りありの店も</li></ul>
+</header>
+
+<div class="area-pick" id="areaPick">
+  <h2>働きたいエリアを選んでください</h2>
+  <div id="regions"></div>
+  <a class="omakase" href="#entry" data-cta="hero" data-omakase="1">お店を選ばずに相談したい方はこちら（おまかせ応募）</a>
+</div>
+
+<section id="shops" hidden aria-labelledby="shops-h">
+  <div class="filter-bar">
+    <div class="filter-row" style="justify-content:space-between;margin-bottom:8px">
+      <h2 id="shops-h" class="cur-area" style="margin:0"><span id="curArea">大阪</span>のお店<button type="button" id="changeArea">エリア変更</button></h2>
+    </div>
+    <div class="filter-row">
+      <div class="seg" role="group" aria-label="業態で絞り込み" id="catSeg">
+        <button type="button" data-cat="all" aria-pressed="true">すべて</button>
+        <button type="button" data-cat="キャバクラ" aria-pressed="false">キャバクラ</button>
+        <button type="button" data-cat="ガールズバー" aria-pressed="false">ガールズバー</button>
+        <button type="button" data-cat="その他" aria-pressed="false">その他</button>
+      </div>
+      <select class="pay-sel" id="paySel" aria-label="体入時給で絞り込み">
+        <option value="0">体入時給：指定なし</option>
+        <option value="3000">体入時給 3,000円〜</option>
+        <option value="5000">体入時給 5,000円〜</option>
+        <option value="8000">体入時給 8,000円〜</option>
+        <option value="10000">体入時給 10,000円〜</option>
+      </select>
+    </div>
+  </div>
+  <p class="result-n" id="resultN"></p>
+  <div class="shops" id="shopList"></div>
+  <button type="button" class="more-btn" id="moreBtn" hidden>もっと見る</button>
+  <p class="note-pay">※「体入時給」は体験入店時の時給です。入店後の時給・待遇はお店ごとに異なります。詳しくは面接時にご確認ください。</p>
+</section>
+
+<div class="mid-cta">
+  <p>気になるお店が決まったら、まとめて応募！<br>迷ったら相談だけでもOKです。</p>
+  <div class="btns">
+    <a class="btn primary" href="#entry" data-cta="middle">WEBで応募する</a>
+    <a class="btn line" href="https://line.me/R/ti/p/%40722klevt" target="_blank" rel="noopener noreferrer" data-cta="middle"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>LINEで相談</a>
+  </div>
+</div>
+
+<section aria-labelledby="flow-h">
+  <p class="sec-label">FLOW</p>
+  <h2 id="flow-h">応募から体験入店まで</h2>
+  <ol class="steps">
+    <li><b>エリアとお店を選ぶ</b><span>気になるお店の「応募候補に追加」を押します。同じエリアなら何店でもOK。</span></li>
+    <li><b>このページのフォームで応募</b><span>お名前・電話番号・年齢・メールアドレスを入れて送信するだけ。</span></li>
+    <li><b>担当者からご連絡</b><span>面接・体験入店の日時をご相談します。</span></li>
+    <li><b>体験入店</b><span>お店の雰囲気を実際に確かめてから決められます。</span></li>
+  </ol>
+</section>
+
+<div class="mid-cta">
+  <p>応募は1分ほどで完了します</p>
+  <div class="btns">
+    <a class="btn primary" href="#entry" data-cta="middle">WEBで応募する</a>
+    <a class="btn ghost" href="#areaPick" data-cta="middle">エリアから探す</a>
+  </div>
+</div>
+
+<section class="faq" aria-labelledby="faq-h">
+  <p class="sec-label">Q&amp;A</p>
+  <h2 id="faq-h">よくある質問</h2>
+  <details><summary>いくつのお店に応募できますか？</summary><p>同じエリア（例：大阪の中なら北新地とミナミなど）のお店なら、いくつでもまとめて応募できます。違うエリアのお店は、別々に応募してください。</p></details>
+  <details><summary>お店が決められません</summary><p>お店を選ばずに「おまかせ」で応募できます。希望のエリアだけ選んで送信してください。LINE・電話でのご相談もOKです。</p></details>
+  <details><summary>体入時給と本当の時給は違いますか？</summary><p>このページの「体入時給」は体験入店のときの時給です。入店後の時給や待遇はお店によって異なりますので、面接時にご確認ください。</p></details>
+  <details><summary>何歳から応募できますか？</summary><p>お店によって18歳以上または20歳以上です。各お店のカードに年齢を表示しています。高校生は応募できません。</p></details>
+  <details><summary>未経験でも大丈夫？</summary><p>未経験から始める方を歓迎しているお店が多くあります。不安なことは応募前にLINE・電話でも相談できます。</p></details>
+</section>
+
+<section id="entry" aria-labelledby="entry-h">
+  <p class="sec-label">ENTRY</p>
+  <h2 id="entry-h">応募する</h2>
+  <div class="entry-grid">
+    <div class="contact">
+      <a class="btn line" href="https://line.me/R/ti/p/%40722klevt" target="_blank" rel="noopener noreferrer" data-cta="entry"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>LINEで応募・相談</a>
+      <a class="btn ghost" href="tel:0120515295" data-cta="entry"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>0120-515-295</a>
+      <p class="tel-note">月〜金 10:00〜21:00／土 13:00〜18:00</p>
+    </div>
+    <div>
+      <form id="entryForm" class="form-card" novalidate id-web-form>
+        <div class="sel-box" id="selBox">
+          <p id="selTitle">応募するお店</p>
+          <ul class="sel-list" id="selList"></ul>
+          <p class="hint" id="selHint">お店を選ばない場合は「おまかせ」で応募できます（希望エリアを選んでください）。</p>
+        </div>
+        <div class="field" id="areaField">
+          <label for="areaSelect">希望エリア<span class="req">必須</span></label>
+          <select id="areaSelect" name="area" required>
+            <option value="">選択してください</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="name">お名前<span class="req">必須</span></label>
+          <input type="text" id="name" name="name" placeholder="例）山田 花子" autocomplete="name" required>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="tel">電話番号<span class="req">必須</span></label>
+            <input type="tel" id="tel" name="tel" placeholder="09012345678" autocomplete="tel" inputmode="tel" required>
+          </div>
+          <div class="field">
+            <label for="age">年齢<span class="req">必須</span></label>
+            <input type="number" id="age" name="age" min="18" max="99" inputmode="numeric" required>
+          </div>
+        </div>
+        <p class="age-warn" id="ageWarn" hidden></p>
+        <div class="field">
+          <label for="email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="email" name="email" placeholder="例）hanako@example.com" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="message">ご質問・ご希望<span class="opt">任意</span></label>
+          <textarea id="message" name="message" rows="3" placeholder="例）週2日くらい働きたい、体験入店の日程を相談したい など"></textarea>
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span><a href="https://www.fankura.com/jobchalle/privacy/" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意します</span>
+        </label>
+        <button type="submit" class="btn primary submit" id="submitBtn">この内容で応募する</button>
+        <div id="status" role="status"></div>
+      </form>
+      <div class="thanks" id="thanks" hidden>
+        <p class="t">ご応募ありがとうございます！</p>
+        <p>内容を確認のうえ、担当者からご連絡します。<br>メールアドレスあてに受付確認メールもお送りしています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="jobchalle-footer-link" href="https://www.fankura.com/jobchalle/" target="_blank" rel="noopener noreferrer"><img src="/images/jobchalle-logo.png" alt="JOB CHALLE 体入チャレンジ ジョブチャレ公式サイト"></a>
+  <p><a href="https://www.fankura.com/jobchalle/privacy/" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:10px 4px;text-decoration:underline">プライバシーポリシー</a></p>
+  <p>© ジョブチャレ</p>
+</footer>
+</div>
+
+<nav class="sticky" aria-label="応募ボタン">
+  <a class="btn line" href="https://line.me/R/ti/p/%40722klevt" target="_blank" rel="noopener noreferrer" data-cta="sticky">LINE</a>
+  <a class="btn primary sel-go" href="#entry" data-cta="sticky" id="stickyGo">WEBで応募</a>
+  <a class="btn tel" href="tel:0120515295" data-cta="sticky" aria-label="電話で相談"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>電話</a>
+</nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== エリア定義（ボタンの並び・URLパラメータ ?area=osaka 等） ===== */
+const REGIONS = [
+  { label: "関西", areas: [["osaka","大阪"],["kyoto","京都"],["hyogo","兵庫"],["shiga","滋賀"],["nara","奈良"],["wakayama","和歌山"]] },
+  { label: "東海・北陸", areas: [["mie","三重"],["gifu","岐阜"],["ishikawa","石川"]] },
+  { label: "中国・四国・九州", areas: [["okayama","岡山"],["hiroshima","広島"],["kagawa","香川"],["kochi","高知"],["fukuoka","福岡"]] },
+  { label: "東北", areas: [["sendai","仙台"]] },
+];
+const AREA_NAME = {}; const AREA_KEY = {};
+REGIONS.forEach(r => r.areas.forEach(([k, n]) => { AREA_NAME[k] = n; AREA_KEY[n] = k; }));
+const PAGE = 12;               // 一度に表示する店舗数（「もっと見る」で追加）
+const DATA_URL = "/data/west-stores.json";
+
+let STORES = [];
+let state = { area: null, cat: "all", pay: 0, shown: PAGE };
+let selected = [];             // 選択中の店舗（同じエリアのみ）
+
+const $ = id => document.getElementById(id);
+function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+function yen(n){ return n.toLocaleString("ja-JP"); }
+function toast(msg){ const t = $("toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove("show"), 2600); }
+function track(name, params){ if (typeof window.gtag === "function") window.gtag("event", name, params); }
+window.__track = track;
+
+/* ===== エリアボタン ===== */
+function renderAreas(){
+  const box = $("regions"); box.textContent = "";
+  const sel = $("areaSelect");
+  REGIONS.forEach(r => {
+    const reg = el("div", "region"); reg.appendChild(el("p", null, r.label));
+    const g = el("div", "areas");
+    r.areas.forEach(([k, n]) => {
+      const cnt = STORES.filter(s => s.pref === n).length;
+      if (!cnt) return;
+      const b = el("button", "area-btn"); b.type = "button"; b.dataset.area = k;
+      b.setAttribute("aria-pressed", state.area === k ? "true" : "false");
+      b.appendChild(el("b", null, n)); b.appendChild(el("small", null, cnt + "店舗"));
+      b.addEventListener("click", () => { setArea(k, true); track("area_select", { area: n }); });
+      g.appendChild(b);
+      const o = el("option", null, n); o.value = n; sel.appendChild(o);
+    });
+    if (g.children.length) { reg.appendChild(g); box.appendChild(reg); }
+  });
+}
+
+function setArea(k, scroll){
+  state.area = k; state.shown = PAGE;
+  document.querySelectorAll(".area-btn").forEach(b => b.setAttribute("aria-pressed", b.dataset.area === k ? "true" : "false"));
+  $("curArea").textContent = AREA_NAME[k];
+  $("shops").hidden = false;
+  if (!selected.length) $("areaSelect").value = AREA_NAME[k];
+  renderList();
+  if (scroll) $("shops").scrollIntoView({ behavior: "smooth" });
+}
+
+/* ===== 絞り込み ===== */
+$("catSeg").addEventListener("click", e => {
+  const b = e.target.closest("button[data-cat]"); if (!b) return;
+  state.cat = b.dataset.cat; state.shown = PAGE;
+  $("catSeg").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+  renderList();
+});
+$("paySel").addEventListener("change", e => { state.pay = +e.target.value; state.shown = PAGE; renderList(); });
+$("changeArea").addEventListener("click", () => $("areaPick").scrollIntoView({ behavior: "smooth" }));
+$("moreBtn").addEventListener("click", () => { state.shown += PAGE; renderList(); });
+
+function filtered(){
+  const n = AREA_NAME[state.area];
+  return STORES.filter(s => s.pref === n
+    && (state.cat === "all" || s.cat === state.cat)
+    && (!state.pay || s.pay >= state.pay))
+    .sort((a, b) => b.pay - a.pay);
+}
+
+/* ===== 店舗カード ===== */
+function card(s){
+  const isSel = selected.some(x => x.id === s.id);
+  const a = el("article", "shop" + (isSel ? " is-sel" : "")); a.id = "shop-" + s.id;
+  const ph = el("div", "photo");
+  if (s.img) {
+    const im = el("img"); im.loading = "lazy"; im.width = 1000; im.height = 676; im.alt = s.name + "の店舗写真"; im.src = s.img;
+    im.referrerPolicy = "no-referrer";
+    im.onerror = () => { ph.classList.add("noimg"); im.remove(); };
+    ph.appendChild(im);
+  } else ph.classList.add("noimg");
+  const bd = el("div", "badges");
+  if (s.age) bd.appendChild(el("span", "badge a" + s.age, s.age + "歳〜"));
+  bd.appendChild(el("span", "badge", s.kind));
+  ph.appendChild(bd);
+  a.appendChild(ph);
+
+  const b = el("div", "shop-body");
+  b.appendChild(el("p", "meta", s.pref + "／" + s.sub));
+  b.appendChild(el("h3", null, s.name));
+  const p = el("p", "pay");
+  if (s.pay) { p.appendChild(el("small", null, "体入時給")); p.appendChild(el("b", null, yen(s.pay))); p.appendChild(document.createTextNode("円〜")); }
+  else p.appendChild(el("small", null, "給与は面接時にご確認ください"));
+  b.appendChild(p);
+  if (s.catch) b.appendChild(el("p", "catch", s.catch));
+
+  const d = el("details"); const sm = el("summary", null, "詳しく見る"); d.appendChild(sm);
+  d.addEventListener("toggle", () => { if (d.open) track("store_detail_open", { store: s.name, area: s.pref }); });
+  const dl = el("dl");
+  [["給与", s.salary], ["勤務時間", s.hours], ["アクセス", s.access || s.addr], ["応募資格", s.age ? s.age + "歳以上（高校生不可）" : "面接時にご確認ください"]].forEach(([k, v]) => {
+    if (!v) return; dl.appendChild(el("dt", null, k)); dl.appendChild(el("dd", null, v));
+  });
+  d.appendChild(dl);
+  if (s.tags && s.tags.length) { const ul = el("ul", "tagl"); s.tags.forEach(t => ul.appendChild(el("li", null, t))); d.appendChild(ul); }
+  b.appendChild(d);
+
+  const btn = el("button", "pick"); btn.type = "button";
+  btn.setAttribute("aria-pressed", isSel ? "true" : "false");
+  btn.innerHTML = isSel ? '<svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>応募候補に追加済み' : '<svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>応募候補に追加';
+  btn.addEventListener("click", () => toggleStore(s));
+  b.appendChild(btn);
+  a.appendChild(b);
+  return a;
+}
+
+function renderList(){
+  const list = $("shopList"); list.textContent = "";
+  const all = filtered();
+  $("resultN").textContent = AREA_NAME[state.area] + "：" + all.length + "店舗" + (state.cat !== "all" || state.pay ? "（絞り込み中）" : "");
+  if (!all.length) { list.appendChild(el("div", "empty", "条件に合うお店がありません。絞り込みを変えてみてください。")); }
+  all.slice(0, state.shown).forEach(s => list.appendChild(card(s)));
+  $("moreBtn").hidden = all.length <= state.shown;
+  if (!$("moreBtn").hidden) $("moreBtn").textContent = "もっと見る（残り" + (all.length - state.shown) + "店舗）";
+}
+
+/* ===== 応募候補（同じエリアのみ複数OK） ===== */
+function toggleStore(s){
+  const i = selected.findIndex(x => x.id === s.id);
+  if (i >= 0) { selected.splice(i, 1); }
+  else {
+    if (selected.length && selected[0].pref !== s.pref) {
+      selected = [];
+      toast("違うエリアのお店は一緒に応募できないため、" + s.pref + "のお店に選び直しました");
+    } else {
+      toast(s.name + " を応募候補に追加しました");
+    }
+    selected.push(s);
+    track("store_select", { store: s.name, area: s.pref });
+  }
+  renderSel(); renderList();
+}
+
+function renderSel(){
+  const ul = $("selList"); ul.textContent = "";
+  selected.forEach(s => {
+    const li = el("li"); li.appendChild(el("span", null, s.name));
+    const x = el("button", null, "×"); x.type = "button"; x.setAttribute("aria-label", s.name + "を外す");
+    x.addEventListener("click", () => toggleStore(s));
+    li.appendChild(x); ul.appendChild(li);
+  });
+  const n = selected.length;
+  $("selTitle").textContent = n ? "応募するお店（" + selected[0].pref + "・" + n + "店）" : "応募するお店：おまかせ";
+  $("selHint").hidden = !!n;
+  $("areaField").hidden = !!n;
+  $("areaSelect").required = !n;
+  if (n) $("areaSelect").value = selected[0].pref;
+  $("stickyGo").textContent = n ? "選択中 " + n + "店 → 応募へ" : "WEBで応募";
+  checkAge();
+}
+
+/* ===== 年齢チェック（選んだお店の年齢条件） ===== */
+function checkAge(){
+  const age = +$("age").value; const w = $("ageWarn");
+  const ng = age ? selected.filter(s => s.age && age < s.age) : [];
+  if (age && age < 18) { w.textContent = "18歳未満の方はご応募いただけません。"; w.hidden = false; return false; }
+  if (ng.length) { w.textContent = ng.map(s => s.name).join("、") + " は" + ng[0].age + "歳以上のお店です。候補から外すか、相談したい場合は備考欄にご記入ください。"; w.hidden = false; return false; }
+  w.hidden = true; return true;
+}
+$("age").addEventListener("input", checkAge);
+
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-omakase]"); if (!a) return;
+  selected = []; renderSel(); renderList && state.area && renderList();
+});
+
+/* ===== データ読み込み ===== */
+fetch(DATA_URL, { cache: "no-cache" }).then(r => r.json()).then(d => {
+  STORES = d.stores || [];
+  $("totalCount").textContent = STORES.length;
+  renderAreas(); renderSel();
+  const q = new URLSearchParams(location.search).get("area");
+  if (q && AREA_NAME[q] && STORES.some(s => s.pref === AREA_NAME[q])) setArea(q, false);
+}).catch(() => {
+  $("regions").appendChild(el("p", "empty", "店舗情報を読み込めませんでした。お手数ですが、LINE・電話・下のフォームからご応募ください。"));
+  renderSel();
+  ["大阪","京都","兵庫","滋賀","奈良","和歌山","三重","岐阜","石川","岡山","広島","香川","高知","福岡","仙台"].forEach(n => { const o = el("option", null, n); o.value = n; $("areaSelect").appendChild(o); });
+});
+
+/* ===== アナリティクス：LINE・電話（全LP共通の名前） ===== */
+document.addEventListener("click", e => {
+  const a = e.target.closest('a[href^="https://line.me"], a[href^="tel:"]'); if (!a) return;
+  track(a.href.startsWith("tel:") ? "tel_click" : "line_click", { store: STORE_NAME, cta_position: a.dataset.cta || "other" });
+});
+</script>
+
+<script>
+  const GAS_ENDPOINT = location.hostname.includes("form.insou-job.com")
+    ? "https://script.google.com/macros/s/AKfycbw1kWmJItNeMN_WZfDgSUSY2BTBTdx-DrNLD35JQ3tRSxIF_FJcETjx3BAG3WzSX1JMng/exec"
+    : "https://script.google.com/macros/s/AKfycby7psl9CtbDlcq-CDzRa6Yv_xAWZSNm3Pvyu9-E9scyXGzwJfDmD5V_4VsLpxIh0kYe/exec";
+  const STORE_NAME = "エリア別まとめ";   // 店舗名列には「エリア別まとめ／大阪：A店、B店」で記録
+  const FORM_TYPE = "エリアまとめLP";
+  const JOB_TYPE = "キャスト応募";
+  const REQUIRED_FIELDS = ["name", "tel", "age", "email"]; // 「必須」表示の項目と合わせて変更してください
+
+  const form = document.getElementById("entryForm");
+  const statusEl = document.getElementById("status");
+  const btn = document.getElementById("submitBtn");
+  const thanksEl = document.getElementById("thanks");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.textContent = "";
+    statusEl.className = "";
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    if (!checkAge()) { document.getElementById("ageWarn").scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+
+    btn.disabled = true;
+    btn.textContent = "送信中...";
+
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries());
+    const area = selected.length ? selected[0].pref : (data.area || "未選択");
+    const choice = selected.length ? selected.map(s => s.name).join("、") : "おまかせ";
+    delete data.area;
+    delete data.consent;
+    data.store = STORE_NAME + "／" + area + "：" + choice;
+    data.jobType = JOB_TYPE;
+    data.formType = FORM_TYPE;
+    data.requiredFields = REQUIRED_FIELDS.join(",");
+    data.submittedAt = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
+    data.pageUrl = window.location.href;
+    // 二重送信防止用の送信ID（自動リトライ時も同じIDを送り、GAS側で重複を弾く）
+    data.submissionId = (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+
+    try {
+      try { await postToGAS(data); }
+      catch (firstErr) { await postToGAS(data); } // 通信が不安定な場合に1回だけ再送
+      track("generate_lead", { store: data.store, job_type: JOB_TYPE, form_type: FORM_TYPE, area: area, store_count: selected.length });
+      form.reset();
+      form.hidden = true;
+      thanksEl.hidden = false;
+      thanksEl.scrollIntoView({ behavior: "smooth", block: "center" });
+    } catch (err) {
+      statusEl.textContent = "送信に失敗しました。お電話・LINEでもご応募いただけます。";
+      statusEl.className = "error";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "この内容で応募する";
+    }
+  });
+
+  async function postToGAS(payload) {
+    const res = await fetch(GAS_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+    });
+    const result = await res.json();
+    if (result.result !== "success") throw new Error(result.message || "送信に失敗しました");
+    return result;
+  }
+</script>
+
+<script>
+  /* ===== アナリティクス：WEB応募ボタン（応募フォームへ移動するボタン）のクリック計測・全LP共通 ===== */
+  (function(){
+    function position(a){
+      if (a.dataset.cta) return a.dataset.cta;
+      for (var el = a; el && el !== document.body; el = el.parentElement) {
+        if (window.getComputedStyle(el).position === "fixed") return "sticky";
+        if (el.id === "entry") return "entry";
+        if (el.matches(".hero, header")) return "hero";
+      }
+      return "other";
+    }
+    document.addEventListener("click", function(e){
+      var a = e.target.closest('a[href="#entry"], a[href="#web-form"]');
+      if (!a || typeof window.gtag !== "function") return;
+      var params = { store: STORE_NAME, cta_position: position(a) };
+      if (selected.length) params.target_store = selected.map(function(s){ return s.name; }).join("、");
+      window.gtag("event", "web_apply_click", params);
+    });
+  })();
+</script>
+</body>
+</html>
